@@ -1,0 +1,23 @@
+﻿@model Sitecore.Exception.Handler.Models.RenderingErrorModel
+           
+@if (!Sitecore.Context.PageMode.IsNormal || !HttpContext.Current.IsCustomErrorEnabled)
+{
+     <style>
+        .error-messages,.status-messages{font-size:1.4em;margin:20px 0}.error-messages .error-header,.status-messages .error-header,.error-messages .status-header,.status-messages .status-header{color:#fff;padding:10px}.error-messages li,.status-messages li{display:block;padding:10px}.error-messages li:last-child,.status-messages li:last-child{border-bottom:none}.error-messages{border:solid 1px #900;color:#900}.error-messages .error-header{background:#900}.error-messages li{border-bottom:dashed 1px #900}.status-messages{border:solid 1px #000a3e;color:#000a3e}.status-messages .status-header{background:#000a3e}.status-messages li{border-bottom:dashed 1px #000a3e}
+    </style>
+    
+    <div class="status-messages">
+        <h4 class="status-header">
+            Some configuration is missing on the view [@Model.RenderingName] Please, make sure the rendering is configured properly.
+        </h4>
+        <ul>
+            <li>
+                @Model.Exception.Message
+            </li>
+        </ul>
+    </div>
+}
+else
+{
+	<!-- Error while rendering the view [@Model.RenderingName] - [@Model.Exception.Message] -->
+}
