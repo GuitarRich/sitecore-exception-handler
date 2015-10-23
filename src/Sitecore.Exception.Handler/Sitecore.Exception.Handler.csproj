@@ -84,6 +84,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Views\Shared\Errors\RenderingError.cshtml" />
+    <None Include="Views\Shared\Errors\RenderingParametersError.cshtml" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
